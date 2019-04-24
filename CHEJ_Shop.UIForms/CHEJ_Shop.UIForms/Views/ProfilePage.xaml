@@ -1,0 +1,172 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+         	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+         	x:Class="CHEJ_Shop.UIForms.Views.ProfilePage"
+         	BindingContext="{Binding Main, Source={StaticResource Locator}}"
+         	Title="Modify User">
+    
+    <ContentPage.Content>
+        
+        <ScrollView BindingContext="{Binding Profile}">
+            
+            <StackLayout Padding="10">
+                
+                <Grid>
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <Label Grid.Column="0"
+                    	   Grid.Row="0"
+                    	   Text="First name"
+                    	   VerticalOptions="Center">
+                    </Label>
+                    <Entry Grid.Column="1"
+                    	   Grid.Row="0"
+                    	   Placeholder="Enter your first name..."
+                    	   Text="{Binding User.FirstName}"
+                           VerticalOptions="Center">
+                    </Entry>
+                    
+                    <Label Grid.Column="0"
+                    	   Grid.Row="1"
+                           Text="Last name"
+                           VerticalOptions="Center">
+                    </Label>
+                    <Entry Grid.Column="1"
+                    	   Grid.Row="1"
+                           Placeholder="Enter your last name..."
+                    	   Text="{Binding User.LastName}"
+                           VerticalOptions="Center">
+                    </Entry>
+                    
+                    <!--<Label Grid.Column="0"
+                    	   Grid.Row="2"
+                           Text="Email"
+                           VerticalOptions="Center">
+                    </Label>
+                    <Entry Grid.Column="1"
+                    	   Grid.Row="2"
+                    	   Keyboard="Email"
+                    	   Placeholder="Enter your email..."
+                    	   Text="{Binding User.Email}"
+                           VerticalOptions="Center">
+                    </Entry>-->
+                    
+                    <Label Grid.Column="0"
+                    	   Grid.Row="2"
+                    	   Text="Country"
+                    	   VerticalOptions="Center">
+                    </Label>
+                    <Picker Grid.Column="1"
+                            Grid.Row="2"
+                    	    ItemDisplayBinding="{Binding Name}"
+                    	    ItemsSource="{Binding Countries}"
+                    	    SelectedItem="{Binding Country}"
+                    	    Title="Select a country..."
+                            VerticalOptions="Center">
+                    </Picker>
+                    
+                    <Label Grid.Column="0"
+                    	   Grid.Row="3"
+                    	   Text="City"
+                    	   VerticalOptions="Center">
+                    </Label>
+                    <Picker Grid.Column="1"
+                    	    Grid.Row="3"
+                    	    ItemDisplayBinding="{Binding Name}"
+                    	    ItemsSource="{Binding Cities}"
+                    	    SelectedItem="{Binding City}"
+                    	    Title="Select a city..."
+                            VerticalOptions="Center">
+                    </Picker>
+                    
+                    <Label Grid.Column="0"
+                    	   Grid.Row="4"
+                    	   Text="Address"
+                    	   VerticalOptions="Center">
+                    </Label>
+                    <Entry Grid.Column="1"
+                           Grid.Row="4"
+                    	   Placeholder="Enter your address..."
+                    	   Text="{Binding User.Address}"
+                           VerticalOptions="Center">
+                    </Entry>
+                    
+                    <Label Grid.Column="0"
+                    	   Grid.Row="5"
+                    	   Text="Phone"
+                    	   VerticalOptions="Center">
+                    </Label>
+                    <Entry Grid.Column="1"
+                    	   Grid.Row="5"
+                    	   Keyboard="Telephone"
+                    	   Placeholder="Enter your phone number..."
+                    	   Text="{Binding User.PhoneNumber}"
+                           VerticalOptions="Center">
+                    </Entry>
+                    
+                </Grid>
+
+                <ActivityIndicator IsRunning="{Binding IsRunning}"
+                                   VerticalOptions="CenterAndExpand"/>
+
+                <StackLayout Orientation="Horizontal"
+                             VerticalOptions="EndAndExpand">
+
+                    <!--<Button BackgroundColor="Navy"
+                    	    BorderRadius="23"
+                    	    Command="{Binding SaveCommand}"
+                    	    HeightRequest="40"
+                    	    HorizontalOptions="FillAndExpand"
+                    	    IsEnabled="{Binding IsEnabled}"
+                    	    Text="Save"
+                    	    TextColor="White"/>
+
+                    <Button BackgroundColor="Purple"
+                    	    BorderRadius="23"
+                    	    Command="{Binding ModifyPasswordCommand}"
+                    	    HeightRequest="40"
+                    	    HorizontalOptions="FillAndExpand"
+                    	    IsEnabled="{Binding IsEnabled}"
+                    	    Text="Modify Password"
+                    	    TextColor="White"/>-->
+                    
+                    <Button BackgroundColor="Blue"
+                    	    Command="{Binding SaveCommand}"
+                    	    HeightRequest="40"
+                    	    HorizontalOptions="FillAndExpand"
+                    	    IsEnabled="{Binding IsEnabled}"
+                    	    Text="Save"
+                    	    TextColor="White"
+                            WidthRequest="85"/>
+
+                    <Button BackgroundColor="Purple"
+                    	    Command="{Binding ModifyPasswordCommand}"
+                    	    HeightRequest="40"
+                    	    HorizontalOptions="FillAndExpand"
+                    	    IsEnabled="{Binding IsEnabled}"
+                    	    Text="Modify Password"
+                    	    TextColor="White"
+                            WidthRequest="85"/>
+                    
+                    <Button BackgroundColor="Green"
+                    	    Command="{Binding BackCommand}"
+                    	    HeightRequest="40"
+                    	    HorizontalOptions="FillAndExpand"
+                    	    IsEnabled="{Binding IsEnabled}"
+                    	    Text="Back"
+                    	    TextColor="White"
+                            WidthRequest="85"/>
+                    
+                </StackLayout>
+                
+            </StackLayout>
+            
+        </ScrollView>
+        
+    </ContentPage.Content>
+    
+</ContentPage>

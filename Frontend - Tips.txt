@@ -1,0 +1,24 @@
+﻿Error List:
+
+--------------------------------------
+
+- Number: 000
+- Message: "The resource could not be loaded because the App Transport Security policy requires the use of a secure connection"
+
+- Solution 01: 
+- You must edit the info.plist file in the root path (iOS), like this:
+
+1 - Opened my Project target's info.plist file.
+2 - Added a Key called NSAppTransportSecurity as a Dictionary.
+3 - Added a Subkey called NSAllowsArbitraryLoads as Boolean and set its value to YES as like following image.
+
+- Solution 02: 
+- You must edit the info.plist file in the root path (iOS), like this:
+
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+</dict>
+
+--------------------------------------

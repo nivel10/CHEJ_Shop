@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:i18n="clr-namespace:CHEJ_Shop.UIForms.Helpers"
+             x:Class="CHEJ_Shop.UIForms.Views.LoginPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="{i18n:Translate LblLogin}">
+
+    <ContentPage.Content>
+
+        <ScrollView BindingContext="{Binding Login}">
+
+            <StackLayout Padding="10">
+
+                <Image HeightRequest="150"
+                       Source="ShopLogo"/>
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" 
+                           Grid.Row="0"
+                           Text="{i18n:Translate LblEmail}"
+                           VerticalOptions="Center"/>
+                    <Entry Grid.Column="1" 
+                           Grid.Row="0"
+                           Keyboard="Email" 
+                           Placeholder="{i18n:Translate PhEnterYourEmail}"
+                           Text="{Binding Email}"
+                           VerticalOptions="Center"/>
+
+                    <Label Grid.Column="0" 
+                           Grid.Row="1"
+                           Text="{i18n:Translate LblPassword}"
+                           VerticalOptions="Center"/>
+                    <Entry Grid.Column="1" 
+                           Grid.Row="1"
+                           IsPassword="True"
+                           Placeholder="{i18n:Translate PhEnterYourPassword}"
+                           Text="{Binding Password}"
+                           VerticalOptions="Center"/>
+                </Grid>
+
+                <StackLayout HorizontalOptions="Center"
+                             Orientation="Horizontal">
+
+                    <Label Text="{i18n:Translate PhRemembermeThisDevice}"
+                           VerticalOptions="Center"/>
+
+                    <Switch IsToggled="{Binding IsRemember}"/>
+
+                </StackLayout>
+
+                <ActivityIndicator IsRunning="{Binding IsRunning}"
+                                   VerticalOptions="CenterAndExpand"/>
+
+                <Label HorizontalOptions="Center" 
+                       TextColor="Blue" 
+                       Text="{i18n:Translate LblForgotYourPassword}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding RememberPasswordCommand}"/>
+                    </Label.GestureRecognizers>
+                </Label>
+
+                <StackLayout Orientation="Horizontal"
+                             HorizontalOptions="Center">
+
+                    <Button BackgroundColor="Blue" 
+                            Command="{Binding LoginCommand}"
+                            HeightRequest="40"
+                            HorizontalOptions="FillAndExpand"
+                            IsEnabled="{Binding IsEnabled}"
+                            Text="{i18n:Translate LblLogin}"
+                            TextColor="White"
+                            WidthRequest="85"/>
+
+                    <Button BackgroundColor="Blue"
+                            Command="{Binding RegisterCommand}"
+                            HeightRequest="40"
+                            HorizontalOptions="FillAndExpand"
+                            IsEnabled="{Binding IsEnabled}"
+                            Text="{i18n:Translate LblRegisterNewUser}"
+                            TextColor="White"
+                            WidthRequest="85"/>
+
+                </StackLayout>
+
+            </StackLayout>
+
+        </ScrollView>
+
+    </ContentPage.Content>
+
+</ContentPage>

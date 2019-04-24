@@ -1,0 +1,18 @@
+﻿Error List:
+
+--------------------------------------
+
+- Number: 405
+- Message: El verbo HTTP usado para obtener acceso a esta pagina no esta permitido
+
+- Solution: 
+- You must edit the web.config file in the root path, like this:
+<system.webServer>
+	<modules runAllManagedModulesForAllRequests="false">
+		<remove name="WebDAVModule" />
+	</modules>
+........
+........
+</system.webServer>﻿
+
+--------------------------------------
