@@ -1,5 +1,6 @@
 ﻿namespace CHEJ_Shop.Common.Services
 {
+    using Interfaces;
     using Models;
     using Newtonsoft.Json;
     using System;
@@ -9,7 +10,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public class ApiService
+    public class ApiService : IApiService
     {
         public async Task<Response> GetListAsync<T>(
             string _urlBase,
