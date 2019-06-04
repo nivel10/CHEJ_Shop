@@ -77,7 +77,7 @@
             };
 
             var response = await this.apiService.GetTokenAsync(
-                "http://chejconsultor.ddns.net:9002/",
+                "http://chejconsultor.ddns.net:9002",
                 "/Account",
                 "/CreateToken",
                 request);
