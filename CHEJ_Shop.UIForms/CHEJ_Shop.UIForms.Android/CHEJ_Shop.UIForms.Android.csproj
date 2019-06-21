@@ -51,10 +51,7 @@
     <PackageReference Include="Xam.Plugin.Media">
       <Version>4.0.1.5</Version>
     </PackageReference>
-    <PackageReference Include="Xamarin.Android.Support.v7.AppCompat" Version="27.0.2.1" />
-    <PackageReference Include="Xamarin.Android.Support.v4" Version="27.0.2.1" />
-    <PackageReference Include="Xamarin.Android.Support.v7.CardView" Version="27.0.2.1" />
-    <PackageReference Include="Xamarin.Android.Support.v7.MediaRouter" Version="27.0.2.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.0.0.497661" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Implementations\Localize.cs" />
@@ -88,12 +85,6 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\ic_phonelink_setup.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CHEJ_Shop.UIForms\CHEJ_Shop.UIForms.csproj">
-      <Project>{BFC5D713-2A2C-4CAA-AD85-85370752C784}</Project>
-      <Name>CHEJ_Shop.UIForms</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_exit_to_app.png" />
@@ -205,6 +196,12 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\mipmap-xxxhdpi\ic_chej_shop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CHEJ_Shop.UIForms\CHEJ_Shop.UIForms.csproj">
+      <Project>{edbff2a5-c19a-4f08-b741-d241bc6b2f51}</Project>
+      <Name>CHEJ_Shop.UIForms</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
