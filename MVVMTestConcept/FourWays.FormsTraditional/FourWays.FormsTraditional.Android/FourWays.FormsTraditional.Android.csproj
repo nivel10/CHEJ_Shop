@@ -98,7 +98,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FourWays.FormsTraditional\FourWays.FormsTraditional.csproj">
-      <Project>{9E1C7DE2-6A21-48D6-A77D-293BD03A9D43}</Project>
+      <Project>{5E2A605A-43E8-4F0B-A425-4A32E9629268}</Project>
       <Name>FourWays.FormsTraditional</Name>
     </ProjectReference>
   </ItemGroup>
